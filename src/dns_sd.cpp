@@ -136,6 +136,7 @@ addConstants(Handle<Object> target) {
     NODE_DEFINE_CONSTANT(target, kDNSServiceErr_NATTraversal);
     NODE_DEFINE_CONSTANT(target, kDNSServiceErr_DoubleNAT);
     NODE_DEFINE_CONSTANT(target, kDNSServiceErr_BadTime);
+#ifdef __APPLE_API_PRIVATE
     NODE_DEFINE_CONSTANT(target, kDNSServiceErr_BadSig);
     NODE_DEFINE_CONSTANT(target, kDNSServiceErr_BadKey);
     NODE_DEFINE_CONSTANT(target, kDNSServiceErr_Transient);
@@ -150,6 +151,7 @@ addConstants(Handle<Object> target) {
     NODE_DEFINE_CONSTANT(target, kDNSServiceInterfaceIndexLocalOnly);
     NODE_DEFINE_CONSTANT(target, kDNSServiceInterfaceIndexP2P);
     NODE_DEFINE_CONSTANT(target, kDNSServiceInterfaceIndexUnicast);
+#endif
 
     // DNS Service Types
     NODE_DEFINE_CONSTANT(target, kDNSServiceType_A);
@@ -193,6 +195,7 @@ addConstants(Handle<Object> target) {
     NODE_DEFINE_CONSTANT(target, kDNSServiceType_DNAME);
     NODE_DEFINE_CONSTANT(target, kDNSServiceType_SINK);
     NODE_DEFINE_CONSTANT(target, kDNSServiceType_OPT);
+#ifdef __APPLE_API_PRIVATE
     NODE_DEFINE_CONSTANT(target, kDNSServiceType_APL);
     NODE_DEFINE_CONSTANT(target, kDNSServiceType_DS);
     NODE_DEFINE_CONSTANT(target, kDNSServiceType_SSHFP);
@@ -209,6 +212,7 @@ addConstants(Handle<Object> target) {
     NODE_DEFINE_CONSTANT(target, kDNSServiceType_UID);
     NODE_DEFINE_CONSTANT(target, kDNSServiceType_GID);
     NODE_DEFINE_CONSTANT(target, kDNSServiceType_UNSPEC);
+#endif
     NODE_DEFINE_CONSTANT(target, kDNSServiceType_TKEY);
     NODE_DEFINE_CONSTANT(target, kDNSServiceType_TSIG);
     NODE_DEFINE_CONSTANT(target, kDNSServiceType_IXFR);
@@ -229,11 +233,13 @@ addConstants(Handle<Object> target) {
     NODE_DEFINE_CONSTANT(target, kDNSServiceFlagsLongLivedQuery);
     NODE_DEFINE_CONSTANT(target, kDNSServiceFlagsAllowRemoteQuery);
     NODE_DEFINE_CONSTANT(target, kDNSServiceFlagsForceMulticast);
+#ifdef __APPLE_API_PRIVATE
     NODE_DEFINE_CONSTANT(target, kDNSServiceFlagsForce);
     NODE_DEFINE_CONSTANT(target, kDNSServiceFlagsReturnIntermediates);
     NODE_DEFINE_CONSTANT(target, kDNSServiceFlagsNonBrowsable);
     NODE_DEFINE_CONSTANT(target, kDNSServiceFlagsShareConnection);
     NODE_DEFINE_CONSTANT(target, kDNSServiceFlagsSuppressUnusable);
+#endif
 }
 
 NAN_METHOD(exportConstants) {
